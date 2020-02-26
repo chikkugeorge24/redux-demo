@@ -16,14 +16,14 @@ const initialState = {
 }
 
 /**
- *  Action constants
+ *  Action type declared as constants
  */
 const FETCH_USERS_REQUEST = `FETCH_USERS_REQUEST`;
 const FETCH_USERS_SUCCESS = `FETCH_USERS_SUCCESS`;
 const FETCH_USERS_FAILURE = `FETCH_USERS_FAILURE`;
 
 /**
- *  Action creator for FETCH_USERS_REQUEST
+ *  Action creator returns action object for type: FETCH_USERS_REQUEST
  */
 const fetchUsersRequest = () => {
     return {
@@ -32,7 +32,7 @@ const fetchUsersRequest = () => {
 }
 
 /**
- *  Action creator for FETCH_USERS_SUCCESS
+ *  Action creator returns action object for type: FETCH_USERS_SUCCESS
  */
 const fetchUsersSuccess = users => {
     return {
@@ -42,7 +42,7 @@ const fetchUsersSuccess = users => {
 }
 
 /**
- *  Action creator for FETCH_USERS_FAILURE
+ *  Action creator return action object for type: FETCH_USERS_FAILURE
  */
 const fetchUsersFailure = error => {
     return {
@@ -79,6 +79,9 @@ const reducer = (state = initialState, action) => {
     }
 }
 
+/**
+ *  Action creater returns a fucntion object (ability of a thunk middleware)
+ */
 const fetchUsers = () => {
     return function (dispatch) {
         dispatch(fetchUsersRequest());
